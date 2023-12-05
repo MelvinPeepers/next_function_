@@ -20,7 +20,7 @@ const handler = async (event, context) => {
 
   console.timeLog("functionExecution", "Async operation completed"); // Log time after async operation
 
-  const message = "Hello from Netlify Function using mjs file!";
+  const message = "Hello from Netlify Functions!";
 
   console.timeLog("functionExecution", "Message generated"); // Log time after message generation
 
@@ -29,7 +29,7 @@ const handler = async (event, context) => {
     body: JSON.stringify({ message }),
   };
 
-  console.timeEnd("functionExecution"); // End measuring function execution time and display the total time
+  console.timeEnd("functionExecution", "End"); // End measuring function execution time and display the total time
 
   return response;
 };
