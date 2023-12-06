@@ -1,11 +1,12 @@
-const handler = async (req) => {
-  const { next_run } = await req.json();
+// netlify/functions/scheduledFunction.mjs
 
-  console.log("Received event! Next invocation at:", next_run);
+const handler = async (event, context) => {
+  console.log("Scheduled function ran at: ", new Date().toISOString());
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: "Scheduled function ran successfully" }),
+  };
 };
 
-const config = {
-  schedule: "@hourly",
-};
-
-export { handler, config };
+export { handler };
