@@ -4,5 +4,5 @@
 
 [scheduled_builds]
   functions = [
-    { name = "scheduledFunction", cron = "*/2 * * * *" }
+    { name = "scheduledFunction", cron = "*/1 * * * *" }
   ]
