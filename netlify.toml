@@ -1,7 +1,0 @@
-[[plugins]]
-  package = "@netlify/plugin-functions-core"
-
-[scheduled_builds]
-  functions = [
-    { name = "scheduledFunction", type = "mjs", cron = "*/2 * * * *" }
-  ]

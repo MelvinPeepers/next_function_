@@ -1,10 +1,11 @@
-const handler = async (event, context) => {
-  console.log("Scheduled function ran at: ", new Date().toISOString());
+const handler = async (req) => {
+  const { next_run } = await req.json();
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: "Scheduled function ran successfully" }),
-  };
+  console.log("Received event! Next invocation at:", next_run);
 };
 
-export { handler };
+const config = {
+  schedule: "@hourly",
+};
+
+export { handler, config };
